@@ -2,6 +2,7 @@ import logo from "./assets/images.jpeg";
 import bgImage from "./assets/logo-search-grid-2x.png";
 import "./style/style.css";
 import "./style/style.scss";
+import "./fonts/ProtestGuerrilla-Regular.ttf"
 
 document.getElementById("toast").style.visibility = "hidden";
 
