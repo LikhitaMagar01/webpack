@@ -16,7 +16,7 @@
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"assets/e7d9baade5bbebb89343.jpeg\";\n\n//# sourceURL=webpack://webpack-loaders/./assets/images.jpeg?");
+eval("module.exports = __webpack_require__.p + \"assets/images.jpeg\";\n\n//# sourceURL=webpack://webpack-loaders/./assets/images.jpeg?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("module.exports = __webpack_require__.p + \"assets/e7d9baade5bbebb89343.jpe
   \****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"assets/6d0d0ccff33287d7f38a.png\";\n\n//# sourceURL=webpack://webpack-loaders/./assets/logo-search-grid-2x.png?");
+eval("module.exports = __webpack_require__.p + \"assets/logo-search-grid-2x.png\";\n\n//# sourceURL=webpack://webpack-loaders/./assets/logo-search-grid-2x.png?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("module.exports = __webpack_require__.p + \"assets/6d0d0ccff33287d7f38a.png
   \********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"assets/cb6024c9bca7ab764ca3.ttf\";\n\n//# sourceURL=webpack://webpack-loaders/./fonts/ProtestGuerrilla-Regular.ttf?");
+eval("module.exports = __webpack_require__.p + \"assets/ProtestGuerrilla-Regular.ttf\";\n\n//# sourceURL=webpack://webpack-loaders/./fonts/ProtestGuerrilla-Regular.ttf?");
 
 /***/ }),
 
@@ -66,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.container {\n    max-height: 1000px;\n    overflow: hidden;\n    max-width: 100%;\n}\n\n.header {\n    width: 90%;\n    margin: 0 auto;\n    padding: 20px 0;\n}\n\n.logo {\n    border-radius: 50%;\n    width: 10%;\n}\n\n.bg_image {\n    width: 100%;\n    height: 100vh;\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    opacity: 90%;\n}\n\n.section {\n    width: 30%;\n    margin: 0 auto;\n    position: absolute;\n    bottom: 20px;\n    left: 5%;\n    font-weight: bold;\n    background-color: rgba(0, 0, 0, 40%);\n    padding: 15px;\n}\n\n.toast {\n    width: 15%;\n    position: absolute;\n    bottom: 20px;\n    right: 20px;\n    background-color: rgba(0, 255, 0, 40%);\n    color: #fff;\n    padding: 10px;\n    font-size: 18px;\n    visibility: hidden;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-loaders/./style/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.container {\n    max-height: 1000px;\n    overflow: hidden;\n    max-width: 100%;\n}\n\n.header {\n    width: 90%;\n    margin: 0 auto;\n    padding: 20px 0;\n}\n\n.logo {\n    border-radius: 50%;\n    width: 10%;\n}\n\n.bg_image {\n    width: 100%;\n    height: 100vh;\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    opacity: 90%;\n}\n\n.section {\n    width: 30%;\n    margin: 0 auto;\n    position: absolute;\n    bottom: 20px;\n    left: 5%;\n    font-weight: bold;\n    background-color: rgba(0, 0, 0, 40%);\n    padding: 15px;\n}\n\n.toast {\n    width: 15%;\n    position: absolute;\n    bottom: 20px;\n    right: 20px;\n    background-color: rgba(0, 255, 0, 40%);\n    color: #fff;\n    padding: 10px;\n    font-size: 18px;\n    visibility: hidden;\n}\n\n.explore-btn {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    padding: 10px 15px;\n    background-color: #007bff;\n    color: white;\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n}\n\n.explore-btn:hover {\n    background-color: #0056b3;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-loaders/./style/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
