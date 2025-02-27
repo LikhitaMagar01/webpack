@@ -12,7 +12,7 @@ module.exports = {
     output: {
         // filename: "[name].bundle.js",
         // for hashing name - to implement caching better way
-        filename: "[contenthash].bundle.js",
+        filename: "[name].[contenthash].bundle.js",
         path: path.resolve(__dirname, "dist"),
         assetModuleFilename: "assets/[name][ext]",
         clean: true,
