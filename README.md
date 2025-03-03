@@ -27,3 +27,23 @@ output --> optimized bundle output
 - caching
 - duplicate code elimination
 
+
+# webpack plugins:
+1. ProgressPlugin:
+  to track your build in when we build: npm run build
+
+2. HtmlWebpackPlugin / mini-css-extract plugin / copyWebpackPlugin:
+  to keep all our code in a bundle file
+
+3. EnvironmentPlugin:
+  to add various variables according to the environments like staging, production, local
+
+4. TerserWebpackPlugin:
+  js file should be minified and optimize bundle, it is used for this.
+
+5. CssMinimizerWebpackPlugin:
+  css minification
+
+6. webpack-bundle-analyzer:
+  bundle analysis, minification and optimization of bundle
+
