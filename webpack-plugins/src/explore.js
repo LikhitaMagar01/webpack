@@ -1,4 +1,5 @@
 import "../src/style/explore-page.css";
+import img from "../src/assets/images/images.jpeg";
 
 // Hide the last two items initially
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("main_container").style.visibility = "visible";
     });
 
-    document.getElementById('item1').src = "https://picsum.photos/200/300";
-    document.getElementById('item2').src = "https://picsum.photos/200/300";
-    document.getElementById('item3').src = "https://picsum.photos/200/300";
-    document.getElementById('item4').src = "https://picsum.photos/200/300";
+    document.getElementById('item1').src = img;
+    document.getElementById('item2').src = img;
+    document.getElementById('item3').src = img;
+    document.getElementById('item4').src = img;
 });

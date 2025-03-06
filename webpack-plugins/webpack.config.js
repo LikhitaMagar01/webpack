@@ -1,5 +1,7 @@
 const path = require("path");
 const Htmlplugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
@@ -23,11 +25,11 @@ module.exports = {
             },
             {
                 test: /\.(css)$/,
-                use: ["style-loader", "css-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.(scss)$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
                 test: /.(ttf|woff|woff2|eot|otf)$/,
@@ -47,6 +49,17 @@ module.exports = {
             filename: "explore.html",
             inject: "body",
             minify: true,
-        })
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "src/assets/images"), 
+                    to: path.resolve(__dirname, "dist", "assets/images"),
+                }
+            ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css"
+        }),
     ]
 };

@@ -1,6 +1,7 @@
 import logo from "./assets/images/images.jpeg";
 import bgImage from "./assets/images/images.jpeg";
 import "./style/style.scss";
+import "./style/style.css";
 import "./assets/fonts/ProtestGuerrilla-Regular.ttf"
 
 document.getElementById("toast").style.visibility = "hidden";
