@@ -61,5 +61,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
         }),
-    ]
+    ],
+    devServer: {
+        port: 3000,
+    }
 };
