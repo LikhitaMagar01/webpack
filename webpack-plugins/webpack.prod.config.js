@@ -2,6 +2,7 @@ const path = require("path");
 const Htmlplugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     mode: "production",
@@ -36,6 +37,12 @@ module.exports = {
                 test: /.(ttf|woff|woff2|eot|otf)$/,
                 type: "asset/resource",
             }
+        ]
+    },
+    optimization: {
+        minimizer: [
+            `...`,
+            new CssMinimizerPlugin()
         ]
     },
     plugins: [
