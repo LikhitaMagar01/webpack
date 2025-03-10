@@ -49,3 +49,7 @@ h1 {
 .title-home {
     font-size: 2em;
 }
+
+.unused-css {
+    padding: 20px;
+}

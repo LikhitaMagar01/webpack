@@ -3,6 +3,12 @@ const Htmlplugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const glob = require("glob");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+
+const PATHS = {
+    src: path.join(__dirname, "src")
+};
 
 module.exports = {
     mode: "production",
@@ -68,6 +74,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
+        }),
+        new PurgeCSSPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
+            only: ["index"],
+            safelist: ["unused-css"]
         }),
     ],
 };
