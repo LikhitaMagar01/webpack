@@ -12,3 +12,13 @@ document.getElementById("title").addEventListener("click", () => {
 
 document.getElementById("logo").src = logo;
 document.getElementById("bg_image").src = bgImage;
+
+unused_function_1()
+
+export function unused_function_1() {
+    console.log('unused function 1')
+}
+
+export function unused_function_2() {
+    console.log('unused function 2');
+}
