@@ -4,6 +4,9 @@ import "./style/style.scss";
 import "./style/style.css";
 import "./assets/fonts/ProtestGuerrilla-Regular.ttf"
 
+import _ from 'lodash'
+import dayjs from 'dayjs'
+
 document.getElementById("toast").style.visibility = "hidden";
 
 document.getElementById("title").addEventListener("click", () => {
@@ -22,3 +25,5 @@ export function unused_function_1() {
 export function unused_function_2() {
     console.log('unused function 2');
 }
+
+document.getElementById("toast").innerHTML = `Thank you for visit on ${dayjs().format('YYYY MM DD HH:MM A')}. Your presence was valuable.`

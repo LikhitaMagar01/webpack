@@ -49,7 +49,10 @@ module.exports = {
         minimizer: [
             `...`,
             new CssMinimizerPlugin()
-        ]
+        ],
+        splitChunks: {
+            chunks: "all"
+        },
     },
     plugins: [
         new Htmlplugin({

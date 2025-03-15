@@ -2,7 +2,7 @@ const path = require("path");
 const Htmlplugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 module.exports = {
     mode: "development",
     entry: {
@@ -39,6 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new BundleAnalyzerPlugin(),
         new Htmlplugin({
             template: "./src/index.html",
             chunks: ["index"],
@@ -65,5 +66,10 @@ module.exports = {
     ],
     devServer: {
         port: 3000,
+    },
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
     }
 };
