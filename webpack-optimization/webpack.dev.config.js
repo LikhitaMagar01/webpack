@@ -71,5 +71,6 @@ module.exports = {
         splitChunks: {
             chunks: "all"
         }
-    }
+    },
+    devtool: false,
 };

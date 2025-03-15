@@ -84,4 +84,5 @@ module.exports = {
             safelist: ["unused-css"]
         }),
     ],
+    devtool: "source-map",
 };
