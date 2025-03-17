@@ -47,3 +47,20 @@ output --> optimized bundle output
 6. webpack-bundle-analyzer:
   bundle analysis, minification and optimization of bundle
 
+# SOURCE MAP
+  Powerful tool for debugging
+  Helps to debug the code efficiently
+  Debugging the optimized webpacked files is difficult
+  mapped your minified code back to original source code
+
+# WHY?
+  for debugging
+  for error reporting
+  for easy development mode
+  code readability
+
+# CONS
+  increase bundle size
+  security risks
+  performance overhead
+
