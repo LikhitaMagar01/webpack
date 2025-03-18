@@ -1,0 +1,88 @@
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.stepper {
+    position: absolute;
+    left: 8px;
+    /* Adjust to align with the line */
+    top: 0;
+    z-index: 1;
+}
+
+.step-circle {
+    width: 24px;
+    height: 24px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.schedule-line {
+    width: 2px;
+    background-color: #007bff;
+    height: 100%;
+    position: absolute;
+    left: 20px;
+    /* Adjusted to account for stepper */
+    top: 0;
+}
+
+.schedule-content {
+    background-color: #e9f0fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-left: 35px;
+    /* Adjusted to avoid overlap with stepper and line */
+    position: relative;
+    min-width: 200px;
+}
+
+.time {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.avatar-section {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.loading-spinner {
+    font-size: 16px;
+}
