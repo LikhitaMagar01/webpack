@@ -2,6 +2,7 @@
 export interface CreateTodoRequest {
     title: string;
     completed: boolean;
+    profile_id: string;
 }
 
 export interface UpdateTodoRequest {
