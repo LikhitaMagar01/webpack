@@ -86,3 +86,17 @@
 .loading-spinner {
     font-size: 16px;
 }
+
+.toggle-button {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
+}

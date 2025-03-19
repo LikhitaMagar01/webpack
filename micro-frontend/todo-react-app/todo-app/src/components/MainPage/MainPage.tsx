@@ -33,7 +33,7 @@ export default function TodoList() {
 
     return (
         <>
-            <div className="py-16 w-lg m-auto">
+            <div className="py-16 w-96 m-auto px-4">
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-0.5">
                         <div className="text-gray-500">
@@ -41,7 +41,7 @@ export default function TodoList() {
                         </div>
                         <div className="text-2xl font-bold">Today</div>
                     </div>
-                    <div className="flex gap-4 w-96 overflow-x-auto no-scrollbar text-center">
+                    <div className="flex gap-4 w-80 overflow-x-auto no-scrollbar text-center">
                         {
                             dates.map((item, index) => (
                                 <div key={index}>
@@ -58,18 +58,12 @@ export default function TodoList() {
                     <ScheduleItem
                         time="9:00 AM"
                         title="Meeting"
-                        description="Zoom call, Discuss team task for the day"
-                        avatarUrls={[
-                            'https://via.placeholder.com/30',
-                            'https://via.placeholder.com/30',
-                            'https://via.placeholder.com/30',
-                            'https://via.placeholder.com/30',
-                        ]}
+                        completed={true}
                         isLoading={false} />
                     <ScheduleItem
                         time="7:00 AM"
                         title="Wakeup"
-                        description="Early wakeup from bed and fresh" />
+                        completed={true} />
                     <ScheduleItem
                         time="9:00 AM"
                         title="Meeting"

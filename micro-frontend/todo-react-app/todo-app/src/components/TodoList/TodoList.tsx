@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './TodoList.css';
 
 interface ScheduleItemProps {
@@ -6,7 +7,8 @@ interface ScheduleItemProps {
     description?: string;
     avatarUrls?: string[];
     isLoading?: boolean;
-    stepNumber?: number; // Added to associate a step number with each item
+    stepNumber?: number;
+    completed?: boolean;
 }
 
 const Stepper = ({ stepNumber }: { stepNumber: number }) => {
@@ -21,10 +23,14 @@ const ScheduleItem = ({
     time,
     title,
     description,
-    avatarUrls = [],
-    isLoading = false,
+    completed,
     stepNumber,
 }: ScheduleItemProps) => {
+    const [isCompleted, setIsCompleted] = useState(completed);
+
+    const handleToggle = () => {
+        setIsCompleted(prevState => !prevState);
+    };
     return (
         <div className="schedule-item">
             <Stepper stepNumber={stepNumber as number} />
@@ -33,22 +39,10 @@ const ScheduleItem = ({
                 <div className="time">{time}</div>
                 <div className="title">{title}</div>
                 {description && <div className="description">{description}</div>}
-                {(avatarUrls.length > 0 || isLoading) && (
-                    <div className="avatar-section">
-                        {isLoading ? (
-                            <span className="loading-spinner">⏳</span>
-                        ) : (
-                            avatarUrls.map((url, index) => (
-                                <img
-                                    key={index}
-                                    src={url}
-                                    alt={`Avatar ${index + 1}`}
-                                    className="avatar"
-                                />
-                            ))
-                        )}
-                    </div>
-                )}
+                <label className="inline-flex items-center cursor-pointer is-right">
+                    <input type="checkbox" checked={isCompleted} className="sr-only peer" onChange={handleToggle} />
+                    <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                </label>
             </div>
         </div>
     );
