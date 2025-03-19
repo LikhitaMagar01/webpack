@@ -7,7 +7,8 @@ const TodoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Profile',
         required: true
-    }
+    },
+    date: Date,
 }, { timestamps: true });
 
 export const Todo = mongoose.model("Todo", TodoSchema);
