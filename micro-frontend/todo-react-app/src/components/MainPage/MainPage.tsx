@@ -33,7 +33,7 @@ export default function TodoList() {
 
     return (
         <>
-            <div className="py-16 w-96 m-auto px-4">
+            <div className="py-16 sm:w-96 lg:w-96 m-auto px-4">
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-0.5">
                         <div className="text-gray-500">
@@ -41,8 +41,8 @@ export default function TodoList() {
                         </div>
                         <div className="text-2xl font-bold">Today</div>
                     </div>
-                    <div className="flex gap-4 w-80 overflow-x-auto no-scrollbar text-center">
-                        {
+                    <div className="flex gap-4 sm:w-64 md:w-96 lg:w-96 overflow-x-auto no-scrollbar text-center">
+                        {Object.keys(dates).length >= 1 ?
                             dates.map((item, index) => (
                                 <div key={index}>
                                     <div className="text-gray-500">
@@ -53,6 +53,9 @@ export default function TodoList() {
                                     </div>
                                 </div>
                             ))
+                            : <div className="text-center">
+                                loading dates
+                            </div>
                         }
                     </div>
                     <ScheduleItem
