@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { useEffect, useState } from "react";
-import "./MainPage.css"
+// import "./MainPage.css"
 import ScheduleItem from "../TodoList/TodoList";
 import { TodoService, Todo as TodoType } from '../../services/TodoService';
 
@@ -70,7 +71,7 @@ export default function TodoList() {
         try {
             const newTodo = await TodoService.createTodo({
                 title: newTodoTitle.trim(),
-                profile_id: '65f2f3c88a78e2b5c5c5c5c5',
+                profile_id: '67d8de3b8dee8c582a5a3099',
                 date: selectedDate.toISOString().split('T')[0]
             });
             setTodos([...todos, newTodo]);
@@ -163,7 +164,7 @@ export default function TodoList() {
                             >
                                 Add Todo
                             </button>
-                        </div>
+                    </div>
                     </div>
 
                     <div className="flex gap-2 sm:w-64 md:w-96 lg:w-96 overflow-x-auto no-scrollbar">
@@ -178,11 +179,11 @@ export default function TodoList() {
                                 }`}
                             >
                                 <div className={isSelectedDate(item.fullDate) ? 'text-white' : 'text-gray-500'}>
-                                    {item.day}
-                                </div>
-                                <div className="font-semibold">
-                                    {item.date}
-                                </div>
+                                        {item.day}
+                                    </div>
+                                    <div className="font-semibold">
+                                        {item.date}
+                                    </div>
                                 <div className={`text-xs ${isSelectedDate(item.fullDate) ? 'text-white' : 'text-gray-400'}`}>
                                     {item.month}
                                 </div>
@@ -200,7 +201,7 @@ export default function TodoList() {
                         </div>
                     ) : (
                         todos.map((todo, index) => (
-                            <ScheduleItem
+                    <ScheduleItem
                                 key={todo._id}
                                 stepNumber={index + 1}
                                 title={todo.title}

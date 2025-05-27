@@ -14,6 +14,7 @@ const profile = ref<Profile | null>(null)
 const loading = ref(true)
 const error = ref<string | null>(null)
 const isProfileOpen = ref(false)
+const todoContainer = ref<HTMLElement | null>(null)
 
 const fetchProfile = async () => {
   try {
@@ -33,45 +34,45 @@ const toggleProfile = () => {
   isProfileOpen.value = !isProfileOpen.value
 }
 
-onMounted(() => {
-  fetchProfile()
+onMounted(async () => {
+  await fetchProfile()
+  
+  // Load the React Todo App
+  if (todoContainer.value) {
+    try {
+      const { mount } = await import('todoApp/TodoApp')
+      mount(todoContainer.value)
+    } catch (err) {
+      console.error('Error loading Todo App:', err)
+      todoContainer.value.innerHTML = 'Error loading Todo application'
+    }
+  }
 })
 </script>
 
 <template>
-  <div class="flex h-screen bg-gray-100">
-    <!-- Main Content -->
-    <div class="flex-1 flex items-center justify-center p-4">
-      <!-- Loading State -->
-      <div v-if="loading" class="text-center">
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-        <p class="mt-4 text-gray-500">Loading profile...</p>
-      </div>
-
-      <!-- Error State -->
-      <div v-else-if="error" class="text-center">
-        <div class="text-red-500">{{ error }}</div>
-      </div>
-
-      <!-- Avatar -->
-      <div v-else-if="profile" class="text-center">
-        <button 
-          @click="toggleProfile"
-          class="relative inline-block group focus:outline-none"
-        >
+  <div class="min-h-screen bg-gray-100">
+    <!-- Profile Section -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Profile</h1>
+        <div v-if="profile" class="flex items-center space-x-4">
           <img
             :src="profile.avatar || 'https://www.gravatar.com/avatar/?d=mp'"
             :alt="profile.name"
-            class="h-24 w-24 rounded-full object-cover border-4 border-white shadow-lg transition-transform duration-200 transform group-hover:scale-105"
+            class="h-16 w-16 rounded-full"
           />
-          <div class="absolute bottom-0 right-0 h-4 w-4 rounded-full bg-green-400 border-2 border-white"></div>
-          <p class="mt-2 text-sm text-gray-600">Click to view profile</p>
-        </button>
+          <div>
+            <h2 class="text-xl font-semibold">{{ profile.name }}</h2>
+            <p class="text-gray-600">{{ profile.email }}</p>
+          </div>
+        </div>
       </div>
 
-      <!-- No Profile State -->
-      <div v-else class="text-center">
-        <p class="text-gray-500">No profile data available</p>
+      <!-- Todo App Section -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Todo List</h2>
+        <div ref="todoContainer"></div>
       </div>
     </div>
 

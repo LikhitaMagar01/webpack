@@ -1,5 +1,15 @@
 import { createApp } from 'vue'
-import App from './App.vue'
 import './style.css'
+import App from './App.vue'
 
-createApp(App).mount('#app') 
+const mount = () => {
+  const app = createApp(App)
+  app.mount('#app')
+}
+
+// In development, mount immediately
+if (process.env.NODE_ENV === 'development') {
+  mount()
+}
+
+export { mount } 

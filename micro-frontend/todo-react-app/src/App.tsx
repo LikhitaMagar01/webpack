@@ -1,4 +1,5 @@
-import './App.css'
+import * as React from 'react';
+// import './App.css'
 import TodoList from './components/MainPage/MainPage'
 
 function App() {
