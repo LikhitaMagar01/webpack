@@ -30,11 +30,10 @@ module.exports = {
           presets: ['@babel/preset-react', '@babel/preset-typescript'],
         },
       },
-      // Temporarily comment out CSS processing
-      // {
-      //   test: /\.css$/,
-      //   use: ['style-loader', 'css-loader', 'postcss-loader'],
-      // },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
     ],
   },
   plugins: [
