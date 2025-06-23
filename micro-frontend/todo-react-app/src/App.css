@@ -1,0 +1,9 @@
+/* App-specific styles */
+.app-container {
+  padding: 20px;
+}
+
+.todo-header {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
