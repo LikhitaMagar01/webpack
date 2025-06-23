@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import ScheduleItem from "../TodoList/TodoList";
 import { TodoService, Todo as TodoType } from '../../services/TodoService';
 
+function formatDateLocal(date: Date) {
+  return date.getFullYear() + '-' +
+    String(date.getMonth() + 1).padStart(2, '0') + '-' +
+    String(date.getDate()).padStart(2, '0');
+}
+
 export default function TodoList() {
     const today = new Date();
     today.setHours(0, 0, 0, 0); 
@@ -53,7 +59,7 @@ export default function TodoList() {
         try {
             const dateToFetch = new Date(selectedDate);
             dateToFetch.setHours(0, 0, 0, 0);
-            console.log('Fetching todos for date:', dateToFetch.toISOString().split('T')[0]);
+            console.log('Fetching todos for date:', formatDateLocal(dateToFetch));
             const fetchedTodos = await TodoService.getAllTodos(dateToFetch);
             setTodos(fetchedTodos);
         } catch (error) {
@@ -72,7 +78,7 @@ export default function TodoList() {
             const newTodo = await TodoService.createTodo({
                 title: newTodoTitle.trim(),
                 profile_id: '67d8de3b8dee8c582a5a3099',
-                date: selectedDate.toISOString().split('T')[0]
+                date: formatDateLocal(selectedDate)
             });
             setTodos([...todos, newTodo]);
             setNewTodoTitle('');
@@ -110,7 +116,7 @@ export default function TodoList() {
         try {
             const updatedTodo = await TodoService.updateTodo(todo._id, {
                 title: todo.title.trim(),
-                date: selectedDate.toISOString().split('T')[0]
+                date: formatDateLocal(selectedDate)
             });
             setTodos(todos.map(t => t._id === todo._id ? updatedTodo : t));
             setEditingTodo(null);
@@ -122,7 +128,7 @@ export default function TodoList() {
     const handleDateClick = (date: Date) => {
         const newDate = new Date(date);
         newDate.setHours(0, 0, 0, 0);
-        console.log('Selected date:', newDate.toISOString().split('T')[0]);
+        console.log('Selected date:', formatDateLocal(newDate));
         setSelectedDate(newDate);
     };
 

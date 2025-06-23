@@ -10,64 +10,121 @@
     display: flex;
     align-items: flex-start;
     position: relative;
+    margin-bottom: 16px;
 }
 
 .stepper {
     position: absolute;
-    left: 8px;
-    /* Adjust to align with the line */
-    top: 0;
-    z-index: 1;
+    left: 0;
+    top: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .step-circle {
-    width: 24px;
-    height: 24px;
-    background-color: #007bff;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    border: 3px solid white;
+    position: relative;
+    z-index: 3;
 }
 
 .schedule-line {
-    width: 2px;
-    background-color: #007bff;
-    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+    height: calc(100% + 16px);
     position: absolute;
-    left: 20px;
-    /* Adjusted to account for stepper */
-    top: 0;
+    left: 14.5px;
+    top: 40px;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.schedule-item:last-child .schedule-line {
+    display: none;
 }
 
 .schedule-content {
-    background-color: #e9f0fa;
-    border-radius: 8px;
-    padding: 10px 15px;
-    margin-left: 35px;
-    /* Adjusted to avoid overlap with stepper and line */
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-left: 48px;
     position: relative;
-    min-width: 200px;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.schedule-content:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Completed task styling */
+.schedule-content.completed {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-color: #bbf7d0;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.schedule-content.completed:hover {
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.15);
+}
+
+.schedule-content.completed .title {
+    color: #166534;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.schedule-content.completed .description {
+    color: #16a34a;
+    opacity: 0.8;
+}
+
+.schedule-content.completed .step-circle {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.schedule-content.completed .schedule-line {
+    background: linear-gradient(to bottom, #22c55e, #16a34a);
 }
 
 .time {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .title {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2937;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .description {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 5px;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .avatar-section {
@@ -87,16 +144,91 @@
     font-size: 16px;
 }
 
+.toggle-container {
+    position: relative;
+}
+
 .toggle-button {
-    margin-top: 10px;
-    background-color: #4caf50;
-    color: white;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .toggle-button:hover {
-    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.toggle-container:hover .toggle-label {
+    opacity: 1;
+    visibility: visible;
+    top: -30px;
+}
+
+.edit-button, .delete-button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.edit-button:hover {
+    background-color: #dbeafe;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.delete-button:hover {
+    background-color: #fee2e2;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.modal-overlay {
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }

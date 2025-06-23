@@ -1,5 +1,12 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { TodoService, Todo as TodoType } from '../../services/TodoService';
+
+function formatDateLocal(date: Date) {
+  return date.getFullYear() + '-' +
+    String(date.getMonth() + 1).padStart(2, '0') + '-' +
+    String(date.getDate()).padStart(2, '0');
+}
 
 export default function Todo() {
   const [todos, setTodos] = useState<TodoType[]>([]);
@@ -27,7 +34,7 @@ export default function Todo() {
       const newTodo = await TodoService.createTodo({
         title: newTodoTitle,
         profile_id: '67d8de3b8dee8c582a5a3099',
-        date: new Date().toISOString().split('T')[0]
+        date: formatDateLocal(new Date())
       });
       setTodos([...todos, newTodo]);
       setNewTodoTitle('');

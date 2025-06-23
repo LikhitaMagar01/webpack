@@ -18,11 +18,11 @@ export interface CreateTodoInput {
   date: string;
 }
 
-// Helper function to format date to YYYY-MM-DD
 const formatDate = (date: Date): string => {
   const d = new Date(date);
-  d.setHours(0, 0, 0, 0);
-  return d.toISOString().split('T')[0];
+  return d.getFullYear() + '-' +
+    String(d.getMonth() + 1).padStart(2, '0') + '-' +
+    String(d.getDate()).padStart(2, '0');
 };
 
 export const TodoService = {
