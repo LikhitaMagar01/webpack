@@ -20,5 +20,11 @@ export default defineConfig({
   },
   server: {
     port: 5174,
+    proxy: {
+      '/react-app.js': {
+        target: process.env.REACT_PREVIEW_URL || 'http://localhost:4173',
+        changeOrigin: true
+      }
+    }
   },
 })

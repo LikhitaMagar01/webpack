@@ -3,9 +3,9 @@ import Profile from './Profile';
 
 function Home() {
   return (
-    <>
-      <div>hi! i am react app updated</div>
-    </>
+    <div style={{ minHeight: '100vh' }}>
+      <div>hi! i am react app updated dfdfdf</div>
+    </div>
   );
 }
 

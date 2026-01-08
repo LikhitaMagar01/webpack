@@ -1,12 +1,9 @@
 <script setup lang="ts">
-declare global {
-  const __REACT_URL__: string
-}
-
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+const isDev = import.meta.env.VITE_IS_DEV ? import.meta.env.VITE_IS_DEV === 'true' : import.meta.env.DEV;
 const reactUrl = __REACT_URL__
 const iframeSrc = ref(reactUrl)
 </script>
@@ -14,7 +11,8 @@ const iframeSrc = ref(reactUrl)
 <template>
   <div>
     <button @click="router.push('/profile/123')">Go to React Profile</button>
-    <iframe :src="iframeSrc" :key="iframeSrc" width="100%" height="500" frameborder="0"></iframe>
+    <iframe v-if="isDev" :src="iframeSrc" style="width: 100%; height: 100%; border: none"></iframe>
+    <div v-else id="react-app" style="width: 100%; height: 100%; border: none"></div>
   </div>
 </template>
 
